@@ -7,3 +7,13 @@
   margin-bottom: 20px;
   justify-content: space-between;
 }
+.app__stats{
+  display: flex;
+  justify-content: space-between;
+}
+body{
+  background-color: #f5f6fa;
+}
+.app{
+  display: flex;
+}
