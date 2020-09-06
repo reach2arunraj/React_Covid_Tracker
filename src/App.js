@@ -5,6 +5,7 @@ import InfoBox from "./InfoBox"
 import Map from "./Map"
 import Table from "./Table"
 import { sortData } from './util';
+import LineGrpah from "./LineGrpah"
 
 
 function App() {
@@ -55,7 +56,6 @@ function App() {
   })
 }
 
-console.log(countryInfo)
 
   return (
     <div className="app">
@@ -90,6 +90,7 @@ console.log(countryInfo)
           <h3>Live cases by country</h3>
           <Table countries={tableData} />
           <h3>World wide new cases</h3>
+          <LineGrpah />
         </CardContent>
       </Card>
     </div>
