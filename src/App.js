@@ -36,12 +36,10 @@ function App() {
 
   const onCountryChange =  async (event) =>{
     const countryCode = event.target.value
-    
-    
     const url = 
     countryCode === "worldwide" 
     ? "https://disease.sh/v3/covid-19/all" 
-    : `https://disease.sh/v3/covid-19/countries/${country}`
+    : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
   await fetch(url)
   .then(response => response.json())
@@ -62,7 +60,7 @@ console.log(countryInfo)
 
           <FormControl className="app__dropdown">
             <Select variant="outlined" value={country} onChange={onCountryChange} >
-              <MenuItem value="WORLDWIDE">WORLDWIDE</MenuItem>
+              <MenuItem value="worldwide">WORLDWIDE</MenuItem>
               {countries.map(country => (
                 <MenuItem value={country.value}>{country.name}</MenuItem>
               ) )
