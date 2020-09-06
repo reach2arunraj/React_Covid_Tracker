@@ -12,7 +12,7 @@ function Map({ center, zoom }) {
               />    
             </LeafletMap>
         </div>
-    )
+    );
 }
 
 export default Map

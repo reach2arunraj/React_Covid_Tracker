@@ -76,7 +76,6 @@ function LineGrpah({casesType = "cases"}) {
             .then(response => response.json())
             .then(data => {
                 const chartData = buildChartData(data) // data is a object
-                console.log(chartData)
                 setData(chartData)
             })
         }
