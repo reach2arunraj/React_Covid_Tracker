@@ -48,9 +48,22 @@ const options = {
 }
 
 
-function LineGrpah({casesType = "cases"}) {
-    //https://disease.sh/v3/covid-19/historical/all?lastdays=120
+function LineGrpah({casesType="cases"}) {
+    
     const [data, setData ] = useState({});
+
+    useEffect(() =>{
+
+        const fetchData = async () =>{
+            await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
+            .then(response => response.json())
+            .then(data => {
+                const chartData = buildChartData(data, casesType ) // data is a object
+                setData(chartData)
+            })
+        }
+        fetchData()
+    },[casesType])
 
     const buildChartData = (data, casesType="cases") => {
         const chartData = [];
@@ -69,18 +82,7 @@ function LineGrpah({casesType = "cases"}) {
     }
     
     
-    useEffect(() =>{
-
-        const fetchData = async () =>{
-            await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
-            .then(response => response.json())
-            .then(data => {
-                const chartData = buildChartData(data) // data is a object
-                setData(chartData)
-            })
-        }
-        fetchData()
-    },[casesType])
+    
 
     return (
         <div className="lineGrpah">

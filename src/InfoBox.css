@@ -16,3 +16,12 @@
     font-size: 0.8rem !important;
     margin-top: 15px !important;
 }
+.infoBox--selected{
+    border-top: 10px solid greenyellow;
+}
+.infoBox--red{
+    border-color: red;
+}
+.infoBox__cases--green{
+    color: lightgreen !important;
+}
