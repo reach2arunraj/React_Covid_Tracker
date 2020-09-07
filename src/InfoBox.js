@@ -5,7 +5,7 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 
 function InfoBox({ title, cases, total, onClick}) {
     return (
-        <Card onClick={(e) => console.log("Boom")} className="infoBox" >
+        <Card onClick={onClick} className="infoBox" >
             <CardContent>
                 <Typography className="infoBox__title" color="textSecondary" >{title}</Typography>
                 <h2 className="infoBox__cases">{cases}</h2>

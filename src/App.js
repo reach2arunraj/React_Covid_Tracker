@@ -93,24 +93,24 @@ function App() {
            cases={prettyPrintStat(countryInfo.todayCases)} 
            total={prettyPrintStat(countryInfo.cases)}   
           />
-          
+
           <InfoBox 
             onClick={e => setCasesType("recovered")} 
-            title="corona Virus Recovered" 
+            title="Recovered" 
             cases={prettyPrintStat(countryInfo.todayRecovered)} 
             total={prettyPrintStat(countryInfo.recovered)}
           />
 
           <InfoBox 
             onClick={e => setCasesType("deaths")} 
-            title="corona Virus Death" 
+            title="Death" 
             cases={prettyPrintStat(countryInfo.todayDeaths)} 
             total={prettyPrintStat(countryInfo.deaths)}
           />
 
         </div>
 
-        <Map center={mapCenter} zoom={mapZoom} countries={mapCountries}/>
+        <Map center={mapCenter} zoom={mapZoom} countries={mapCountries} casesType={casesType} />
 
       </div>
       <Card className="app__right">
