@@ -123,7 +123,7 @@ function App() {
           <h3>Live cases by country</h3>
           <Table countries={tableData} />
           <h3>World wide new {casesType}</h3>
-          <LineGrpah casesType={casesType}/>
+          <LineGrpah casesType={casesType} className="app__graph"/>
         </CardContent>
       </Card>
     </div>

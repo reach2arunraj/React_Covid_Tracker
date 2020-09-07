@@ -48,7 +48,7 @@ const options = {
 }
 
 
-function LineGrpah({casesType="cases"}) {
+function LineGrpah({casesType="cases", className}) {
     
     const [data, setData ] = useState({});
 
@@ -85,7 +85,7 @@ function LineGrpah({casesType="cases"}) {
     
 
     return (
-        <div className="lineGrpah">
+        <div className={className}>
             <h1>I am a Graph</h1>
             {data?.length > 0 && (
             <Line 
